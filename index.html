@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ifly wang · 导航</title>
+<meta name="description" content="ifly wang 的个人导航页">
+<style>
+  :root {
+    --bg: #0f1115;
+    --card: #171a21;
+    --text: #e8eaf0;
+    --muted: #9aa0b0;
+    --accent: #6ee7b7;
+    --border: #262b36;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    line-height: 1.7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .wrap { width: 100%; max-width: 680px; padding: 0 24px; }
+  header {
+    padding: 88px 0 40px;
+    text-align: center;
+  }
+  .avatar {
+    width: 88px; height: 88px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6ee7b7, #3b82f6);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 34px; font-weight: 700; color: #0f1115;
+    margin: 0 auto 20px;
+  }
+  h1 { font-size: 30px; letter-spacing: 1px; }
+  .tagline { color: var(--muted); margin-top: 10px; font-size: 15px; }
+  section {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px 28px;
+    margin-bottom: 20px;
+  }
+  section h2 {
+    font-size: 17px; margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  section h2::before {
+    content: ""; width: 4px; height: 18px;
+    background: var(--accent); border-radius: 2px;
+    display: inline-block;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  @media (max-width: 520px) { .grid { grid-template-columns: 1fr; } }
+  .card {
+    display: block;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 18px;
+    text-decoration: none;
+    color: var(--text);
+    transition: all .2s;
+  }
+  a.card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+  .card .name { font-size: 15px; font-weight: 600; }
+  .card .desc { font-size: 13px; color: var(--muted); margin-top: 4px; }
+  .card.locked { cursor: default; }
+  .card.locked .name::after {
+    content: " 🔒";
+    font-size: 13px;
+  }
+  footer {
+    padding: 36px 0 60px;
+    color: var(--muted);
+    font-size: 13px;
+    text-align: center;
+  }
+  footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="avatar">W</div>
+      <h1>我的导航</h1>
+      <p class="tagline">常用服务，一处直达。</p>
+    </header>
+
+    <section>
+      <h2>🖥 我的面板</h2>
+      <div class="grid">
+        <div class="card locked">
+          <div class="name">CFnew · 订阅中心</div>
+          <div class="desc">Worker 313131 · 地址自记</div>
+        </div>
+        <div class="card locked">
+          <div class="name">CFNext · 隧道面板</div>
+          <div class="desc">Pages 部署 · 地址自记</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>🧰 常用服务</h2>
+      <div class="grid">
+        <a class="card" href="https://dash.cloudflare.com" target="_blank" rel="noopener">
+          <div class="name">Cloudflare 控制台</div>
+          <div class="desc">DNS · Workers · Pages</div>
+        </a>
+        <a class="card" href="https://github.com/ifly1121827080-crypto" target="_blank" rel="noopener">
+          <div class="name">GitHub</div>
+          <div class="desc">@ifly1121827080-crypto</div>
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <h2>📬 找到我</h2>
+      <div class="grid">
+        <a class="card" href="https://github.com/ifly1121827080-crypto" target="_blank" rel="noopener">
+          <div class="name">GitHub</div>
+          <div class="desc">看我的项目</div>
+        </a>
+        <a class="card" href="mailto:ifly1121827080@gmail.com">
+          <div class="name">发邮件</div>
+          <div class="desc">ifly1121827080@gmail.com</div>
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 ifly wang · <a href="https://iflywang.dpdns.org">iflywang.dpdns.org</a></p>
+    </footer>
+  </div>
+</body>
+</html>
